@@ -1,0 +1,118 @@
+<nz-layout>
+  <nz-header>
+    <div style="display:inline-block;width: 10%;">
+      <a href="#/">
+        <img src="assets/logo.svg" style="max-height:40px;">
+      </a>
+    </div>
+
+    <div style="display:inline-block;width: 10%;">
+      <button nz-button [nzType]="'primary'" (click)="handleCollapseAction()" style="margin-bottom: 10px;">
+        <i class="anticon" [class.anticon-menu-unfold]="isCollapsed" [class.anticon-menu-fold]="!isCollapsed"></i>
+      </button>
+    </div>
+
+    <div style="display:inline-block;width: 45%;">
+      <nz-input-group nzSuffixIcon="anticon anticon-search">
+        <input width="100%" type="text" nz-input placeholder="please input some information...">
+      </nz-input-group>
+    </div>
+
+    <div style="display:inline-block;width: 35%; text-align: right ;">
+      <nz-badge [nzCount]="5">
+        <button nzTrigger="click" nzTitle="prompt text" nzPlacement="bottom" nz-button nz-popover
+                [nzTitle]="titleTemplate" [nzContent]="contentTemplate" class="btn" nzType="primary" nzShape="circle">
+          <i
+            class="anticon anticon-bell"></i>
+        </button>
+        <ng-template #titleTemplate><i class="anticon anticon-info-circle"></i> Title</ng-template>
+        <ng-template #contentTemplate>
+          <nz-list [nzDataSource]="data" [nzRenderItem]="item" [nzItemLayout]="'horizontal'">
+            <ng-template #item let-item>
+              <nz-list-item class="tooltip-layout">
+                <nz-list-item-meta
+                  [nzTitle]="nzTitle"
+                  nzDescription="Alert information： you should pay attention to ....">
+                  <ng-template #nzTitle>
+                    {{item.title}}
+                  </ng-template>
+                </nz-list-item-meta>
+              </nz-list-item>
+            </ng-template>
+          </nz-list>
+        </ng-template>
+      </nz-badge>
+
+      <button nz-button style="margin-left: 10px" nzType="primary" nzShape="circle"><i
+        class="anticon anticon-setting"></i></button>
+      <button nz-button style="margin-left: 10px" nzType="primary" nzShape="circle"><i
+        class="anticon anticon-poweroff"></i></button>
+    </div>
+  </nz-header>
+  <nz-layout >
+    <nz-sider [nzCollapsed]="isCollapsed">
+      <div>
+        <ul nz-menu [nzMode]="'inline'" nzTheme='light' [nzInlineCollapsed]="isCollapsed">
+          <li nz-menu-item>
+            <span title>
+              <i class="anticon anticon-dashboard"></i>
+              <span>Dashboard</span>
+            </span>
+          </li>
+          <li nz-submenu>
+            <span title>
+              <i class="anticon anticon-area-chart"></i>
+              <span>Chart</span>
+            </span>
+            <ul>
+              <li nz-menu-item>G2</li>
+              <li nz-menu-item>G6</li>
+              <li nz-menu-item>F2</li>
+              <li nz-menu-item>D3</li>
+              <li nz-menu-item>Echart</li>
+            </ul>
+          </li>
+          <li nz-submenu>
+            <span title>
+              <i class="anticon anticon-layout"></i>
+              <span>Operations</span>
+            </span>
+            <ul>
+              <li nz-menu-item>Create</li>
+              <li nz-menu-item>Retrieve</li>
+              <li nz-menu-item>Update</li>
+              <li nz-menu-item>Delete</li>
+            </ul>
+          </li>
+          <li nz-submenu>
+            <span title>
+              <i class="anticon anticon-setting"></i>
+              <span>Other</span>
+            </span>
+            <ul>
+              <li nz-menu-item>I18N</li>
+              <li nz-menu-item>Draggable</li>
+              <li nz-menu-item>LOG</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nz-sider>
+    <nz-layout>
+      <nz-content>
+        <div class="content-box">
+          <div nz-row nzGutter="16">
+            <div nz-col class="gutter-row" nzSpan="24">
+              <div class="gutter-box">
+                content
+              </div>
+            </div>
+          </div>
+        </div>
+      </nz-content>
+    </nz-layout>
+  </nz-layout>
+  <nz-footer>
+    Copyright by [liumiaocn] ICP 1567-2018
+  </nz-footer>
+</nz-layout>
