@@ -65,7 +65,7 @@
               <span>Chart</span>
             </span>
             <ul>
-              <li nz-menu-item>G2</li>
+              <li nz-menu-item><a routerLink="/layout/g2" routerLinkActive="active">G2</a></li>
               <li nz-menu-item>G6</li>
               <li nz-menu-item>F2</li>
               <li nz-menu-item>D3</li>
@@ -104,7 +104,7 @@
           <div nz-row nzGutter="16">
             <div nz-col class="gutter-row" nzSpan="24">
               <div class="gutter-box">
-                content
+                <router-outlet></router-outlet>
               </div>
             </div>
           </div>
